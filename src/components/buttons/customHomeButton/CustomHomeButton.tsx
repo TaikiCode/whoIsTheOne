@@ -3,7 +3,7 @@ import './customHomeButton.scss'
 
 interface Props {
   text: string
-  onClick: () => void;
+  onClick: () => void
 }
 
 const CustomHomeButton: VFC<Props> = ({ text, onClick }) => {

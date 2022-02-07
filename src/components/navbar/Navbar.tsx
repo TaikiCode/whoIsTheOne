@@ -1,22 +1,22 @@
 import { VFC, useState } from 'react'
-import { MenuIcon} from "@heroicons/react/solid"
-import {LogoutIcon} from "@heroicons/react/outline"
+import { MenuIcon } from '@heroicons/react/solid'
+import { LogoutIcon } from '@heroicons/react/outline'
 import NavItem from './navItem/NavItem'
-import "./navbar.scss"
+import './navbar.scss'
 
 const NAV_ITEM_LIST = [
-    {
-        text: "Home",
-        path: "/"
-    },
-    {
-        text: "Players",
-        path: "/players"
-    },
-    {
-        text: "Battle",
-        path: "/battle"
-    },
+  {
+    text: 'Home',
+    path: '/',
+  },
+  {
+    text: 'Players',
+    path: '/players',
+  },
+  {
+    text: 'Battle',
+    path: '/battle',
+  },
 ]
 
 const Navbar: VFC = () => {
@@ -36,8 +36,8 @@ const Navbar: VFC = () => {
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
-              <MenuIcon className="block h-6 w-6"/>
-              <MenuIcon className="hidden h-6 w-6"/>
+              <MenuIcon className="block h-6 w-6" />
+              <MenuIcon className="hidden h-6 w-6" />
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
@@ -48,13 +48,15 @@ const Navbar: VFC = () => {
             </div>
             <div className="hidden sm:block sm:ml-64">
               <div className="flex space-x-6">
-                  {NAV_ITEM_LIST.map((item, index) => <NavItem key={index} {...item}/>)}                  
+                {NAV_ITEM_LIST.map((item, index) => (
+                  <NavItem key={index} {...item} />
+                ))}
               </div>
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button className="p-1  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-              <LogoutIcon className="h-6 w-6"/>
+              <LogoutIcon className="h-6 w-6" />
             </button>
             {/* <!-- Profile dropdown --> */}
             <div className="ml-3 relative">
@@ -102,7 +104,9 @@ const Navbar: VFC = () => {
       {/* <!-- Mobile menu, show/hide based on menu state. --> */}
       <div className={`${navToggle ? 'sm:hidden' : 'hidden'}`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
-            {NAV_ITEM_LIST.map((item, index) => <NavItem key={index} {...item} isMobile/>)}                  
+          {NAV_ITEM_LIST.map((item, index) => (
+            <NavItem key={index} {...item} isMobile />
+          ))}
         </div>
       </div>
     </nav>

@@ -1,22 +1,23 @@
 import { VFC, useState } from 'react'
 
 interface Props {
+  currentWeight: string
   weightClasses: string[]
+  onClick: (weightClass: string) => void
 }
 
-const Tabs: VFC<Props> = ({ weightClasses }) => {
-  const [currentTab, setCurrentTab] = useState<string>('全て')
-
-  const onClick = (text: string) => setCurrentTab(text)
+const Tabs: VFC<Props> = ({ currentWeight, weightClasses, onClick }) => {
   return (
     <div className="tabs tabs-boxed flex flex-nowrap py-5 overflow-x-scroll whitespace-nowrap">
-      {weightClasses.map((text, index) => (
+      {weightClasses.map((weightClass, index) => (
         <a
           key={index}
-          className={`tab mx-1 ${currentTab === text && "tab-active"} `}
-          onClick={() => onClick(text)}
+          className={`tab mx-1 ${
+            currentWeight === weightClass && 'tab-active'
+          } `}
+          onClick={() => onClick(weightClass)}
         >
-          {text}
+          {weightClass}
         </a>
       ))}
     </div>

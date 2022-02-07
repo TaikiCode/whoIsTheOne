@@ -5,8 +5,7 @@ import homeImage from '../../assets/home.png'
 import CustomHomeButton from '../../components/buttons/customHomeButton/CustomHomeButton'
 
 const HomePage: VFC = () => {
-    const history = useHistory()
-    console.log(history)
+  const history = useHistory()
   return (
     <div style={{ backgroundColor: '#333' }}>
       <div className={styles.homeContainer}>
@@ -22,8 +21,14 @@ const HomePage: VFC = () => {
             champion."
           </p>
           <div>
-            <CustomHomeButton text="WATCH PLAYERS" onClick={() => history.push('/players')} />
-            <CustomHomeButton text="LET'S BATTLE!" onClick={() => history.push('/players')}/>
+            <CustomHomeButton
+              text="WATCH PLAYERS"
+              onClick={() => history.push('/players')}
+            />
+            <CustomHomeButton
+              text="LET'S BATTLE!"
+              onClick={() => history.push('/players')}
+            />
           </div>
         </div>
       </div>

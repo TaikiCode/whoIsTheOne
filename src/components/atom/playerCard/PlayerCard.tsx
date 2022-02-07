@@ -1,17 +1,15 @@
-import {VFC} from 'react'
-import "./playerCard.scss"
+import { VFC } from 'react'
+import './playerCard.scss'
 
 interface Props {
   name: string
   image: string
   weightClass: string
   record: string
-
 }
 
-const PlayerCard: VFC<Props> = ({name, image, weightClass, record}) => {
+const PlayerCard: VFC<Props> = ({ name, image, weightClass, record }) => {
   return (
-
     <div className="px-1 transform transition duration-500 hover:rotate-6 cursor-pointer m-6">
       <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow-2xl">
         <img className="w-full" src={image} alt={name} />
@@ -29,4 +27,3 @@ const PlayerCard: VFC<Props> = ({name, image, weightClass, record}) => {
 }
 
 export default PlayerCard
-
