@@ -1,9 +1,12 @@
 import { VFC } from 'react'
+import { useHistory } from 'react-router-dom'
 import styles from './homePage.module.scss'
 import homeImage from '../../assets/home.png'
 import CustomHomeButton from '../../components/buttons/customHomeButton/CustomHomeButton'
 
 const HomePage: VFC = () => {
+    const history = useHistory()
+    console.log(history)
   return (
     <div style={{ backgroundColor: '#333' }}>
       <div className={styles.homeContainer}>
@@ -19,8 +22,8 @@ const HomePage: VFC = () => {
             champion."
           </p>
           <div>
-            <CustomHomeButton text="WATCH PLAYERS" />
-            <CustomHomeButton text="LET'S BATTLE!" />
+            <CustomHomeButton text="WATCH PLAYERS" onClick={() => history.push('/players')} />
+            <CustomHomeButton text="LET'S BATTLE!" onClick={() => history.push('/players')}/>
           </div>
         </div>
       </div>
