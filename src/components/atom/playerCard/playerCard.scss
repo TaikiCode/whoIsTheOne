@@ -1,0 +1,45 @@
+.cardContainer {
+  padding: 0 0.25rem;
+  transform: rotate(0);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 400ms;
+  cursor: pointer;
+  &:hover {
+    transform: rotate(6deg);
+  }
+  .card {
+    background: white;
+    max-width: 24rem;
+    --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    .textArea {
+      text-align: center;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+
+      div {
+        font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+        font-weight: 800;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      span {
+        --tw-text-opacity: 1;
+        color: rgba(55, 65, 81, var(--tw-text-opacity));
+        font-size: 0.6rem;
+      }
+      p {
+        --tw-text-opacity: 1;
+        color: rgba(55, 65, 81, var(--tw-text-opacity));
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+    }
+  }
+}
