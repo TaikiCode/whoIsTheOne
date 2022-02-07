@@ -1,17 +1,27 @@
 import {VFC} from 'react'
 import "./playerCard.scss"
 
-const PlayerCard: VFC = () => {
+interface Props {
+  name: string
+  image: string
+  weightClass: string
+  record: string
+
+}
+
+const PlayerCard: VFC<Props> = ({name, image, weightClass, record}) => {
   return (
-    <div className="cardContainer">
-      <div className="card">
-        <img
-          src="https://www.ringtv.com/wp-content/uploads/2016/07/Canelo-Alvarez_Ring-Belts_ratings-crop_Hoganphotos6-270x270.jpg"
-        />
-        <div className="textArea">
-          <div>Canelo Alvarez</div>
-          <span>バンタム級</span>
-          <p>55-1-2 35 KOs</p>
+
+    <div className="px-1 transform transition duration-500 hover:rotate-6 cursor-pointer m-6">
+      <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow-2xl">
+        <img className="w-full" src={image} alt={name} />
+        <div className="py-3 text-center">
+          <div className="font-serif font-extrabold text-lg">{name}</div>
+          <span className="text-gray-700 weightClass">{weightClass}</span>
+          <p className="text-gray-700 text-xs">
+            {record}
+            {/* {boxer.win}-{boxer.lose}-{boxer.draw} {boxer.KO}KOs */}
+          </p>
         </div>
       </div>
     </div>

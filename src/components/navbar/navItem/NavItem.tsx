@@ -1,15 +1,17 @@
 import { VFC } from 'react'
 import { Link } from 'react-router-dom'
+import "./navItem.scss"
 
 interface Props {
   text: string
   path: string
+  isMobile?: boolean
 }
 
-const NavItem: VFC<Props> = ({ text, path }) => {
+const NavItem: VFC<Props> = ({ text, path, isMobile }) => {
   return (
     <Link to={path}>
-      <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium cursor-pointer">
+      <a className={isMobile ? "mobileNavItem" : "navItem"}>
         {text}
       </a>
     </Link>
@@ -17,3 +19,4 @@ const NavItem: VFC<Props> = ({ text, path }) => {
 }
 
 export default NavItem
+
