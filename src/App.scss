@@ -14,3 +14,105 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+// *** Battle Card ***
+
+.card {
+  min-width: 95%;
+}
+
+.tinder {
+  /* width: 100vw;
+  height: 100vh; */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.loaded.tinder {
+  opacity: 1;
+}
+
+.tinder--cards {
+  flex-grow: 1;
+  // padding-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-end; */
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.tinder--card {
+  display: inline-block;
+  /* width: 20vw; */
+  /* max-width: 400px; */
+  // height: 40vh;
+  background: #ffffff;
+  padding-bottom: 10px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: absolute;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+}
+
+.tinder--card:hover {
+  transform: rotate(6deg);
+  cursor: pointer;
+}
+
+.moving.tinder--card {
+  transition: none;
+}
+
+.tinder--card img {
+  width: 100%;
+  pointer-events: none;
+}
+
+.tinder--buttons {
+  z-index: 100;
+  button {
+    line-height: 60px;
+    width: 60px;
+    border: 0;
+    display: inline-block;
+    margin: 0 1.5rem;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.loseBtn {
+  -webkit-box-shadow: 0 5px 0 rgba(220, 38, 38, 1);
+  box-shadow: 0 5px 0 rgba(220, 38, 38, 1);
+  @apply rounded-full  text-white bg-red-500;
+}
+
+.winBtn {
+  -webkit-box-shadow: 0 5px 0 rgba(5, 150, 105, 1);
+  box-shadow: 0 5px 0 rgba(5, 150, 105, 1);
+  @apply rounded-full text-white bg-green-500;
+}
+
+// *** tailwind Custom ***
+.flexRowCenter {
+  @apply flex justify-center items-center;
+}
+
+.flexColCenter {
+  @apply flex flex-col justify-center items-center;
+}
