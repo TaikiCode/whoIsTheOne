@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { setCardsToDeck } from '../battleField/modules/setCardsToDeck'
 import ActionButtons from './ActionButtons'
 import BattleCard from './BattleCard'
-// import Buttons from "./Buttons";
 
 const LeftSwipeCard = (props) => {
   const [isLoad, setIsLoad] = useState(false)
@@ -11,7 +11,7 @@ const LeftSwipeCard = (props) => {
 
   useEffect(() => {
     setIsLoad(true)
-    props.setCards(Array.from(ref.current.children), false)
+    setCardsToDeck(Array.from(ref.current.children), false)
   }, [])
 
   // battlefield

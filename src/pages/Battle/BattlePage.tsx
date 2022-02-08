@@ -12,11 +12,10 @@ const BattlePage: VFC = () => {
 //   const allPlayers = allBoxers
 
   const allPlayers = allBoxers.filter(
-    (item) => item.weightClass === 'バンタム級'
+    (item) => item.weightClass === 'ヘビー級'
   )
-  console.log(allPlayers)
 
-  const functions = Functions({ isDone, setIsDone })
+  const functions = Functions({ setIsDone })
 
   return (
     <div className="h-screen">

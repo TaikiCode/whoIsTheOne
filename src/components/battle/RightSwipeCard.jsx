@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { setCardsToDeck } from '../battleField/modules/setCardsToDeck'
 import BattleCard from './BattleCard'
 
 const RightSwipeCard = (props) => {
   let ref = useRef(null)
-
-  //   const router = useRouter()
 
   let allCards = ref.current?.children
 
@@ -14,21 +13,12 @@ const RightSwipeCard = (props) => {
         .length === allCards.length
     if (isOver) {
       alert('hello')
-      //   router.push(
-      //     '/battle/result/[slug]',
-      //     `/battle/result/${props.weightClass}`
-      //   )
-      //   localStorage.setItem('playerData', JSON.stringify(props.playersData))
     }
   }
 
   useEffect(() => {
-    props.setCards(Array.from(ref.current.children), false)
-    props.setPlayersData([props.boxersList[props.opponentIndex]])
-    // props.handleSetDispatch({
-    //   data: props.boxersList[props.opponentIndex],
-    //   index: props.opponentIndex,
-    // })
+    setCardsToDeck(Array.from(ref.current.children), false)
+    // props.setPlayersData([props.boxersList[props.opponentIndex]])
   }, [])
 
   useEffect(() => {
@@ -36,10 +26,10 @@ const RightSwipeCard = (props) => {
       props.swipeAnimation(Array.from(allCards), true)
       props.setIsDone(false)
       props.setOpponentIndex((prev) => prev + 1)
-      props.setPlayersData((prev) => [
-        ...prev,
-        props.boxersList[props.opponentIndex + 1],
-      ])
+      // props.setPlayersData((prev) => [
+      //   ...prev,
+      //   props.boxersList[props.opponentIndex + 1],
+      // ])
     }
   }, [props.isDone])
 
