@@ -14,3 +14,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+// *** tailwind Custom ***
+.flexRowCenter {
+  @apply flex justify-center items-center;
+}
+
+.flexColCenter {
+  @apply flex flex-col justify-center items-center;
+}
