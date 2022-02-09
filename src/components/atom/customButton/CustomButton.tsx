@@ -5,11 +5,17 @@ interface Props {
   className: string
   onClick: () => void
   children: ReactNode
+  disabled?: boolean
 }
 
-const CustomButton: VFC<Props> = ({ children, className, onClick }) => {
+const CustomButton: VFC<Props> = ({
+  children,
+  className,
+  onClick,
+  disabled,
+}) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   )

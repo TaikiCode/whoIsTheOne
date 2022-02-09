@@ -1,5 +1,6 @@
 import { VFC, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import CustomButton from '../../components/atom/customButton/CustomButton'
 import { disabledClasses, weightClasses } from '../../data/weightClasses'
 
 const SelectWeightClassPage: VFC = () => {
@@ -29,19 +30,19 @@ const SelectWeightClassPage: VFC = () => {
         </ul>
       </div>
       <div className="h-1/5 w-1/3 flex justify-around items-center">
-        <button
-          onClick={() => history.push('/')}
+        <CustomButton
           className="btn btn-outline btn-warning"
+          onClick={() => history.push('/')}
         >
           Homeに戻る
-        </button>
-        <button
+        </CustomButton>
+        <CustomButton
           onClick={() => history.push(`/battle/${selectedClass}`)}
           className="btn btn-primary"
           disabled={!selectedClass}
         >
           対戦する
-        </button>
+        </CustomButton>
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, VFC } from 'react'
 import { useHistory } from 'react-router-dom'
-import ActionButtons from '../battle/ActionButtons'
+import CustomButton from '../atom/customButton/CustomButton'
 import DeckOfBattleCard from './DeckOfBattleCard/DeckOfBattleCard'
 import { setCardsToDeck } from './modules/setCardsToDeck'
 import { swipeCardAnimation } from './modules/swipeCardAnimation'
@@ -68,10 +68,24 @@ const BattleField: VFC<Props> = ({ boxersList }) => {
           isLoad={isLoad}
         />
         <div className="w-full h-1/4 flex justify-center items-start">
-          <ActionButtons
-            swipeAnimation={swipeAnimation}
-            allCards={leftDeckRef.current?.children}
-          />
+          <div className="tinder--buttons">
+            <CustomButton
+              className="loseBtn"
+              onClick={() =>
+                swipeAnimation(Array.from(leftDeckRef.current?.children), false)
+              }
+            >
+              {'Lose'}
+            </CustomButton>
+            <CustomButton
+              className="winBtn"
+              onClick={() =>
+                swipeAnimation(Array.from(leftDeckRef.current?.children), true)
+              }
+            >
+              {'Win'}
+            </CustomButton>
+          </div>
         </div>
       </div>
       <div className="w-1/5 h-full flexRowCenter">
