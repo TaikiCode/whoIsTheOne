@@ -1,6 +1,6 @@
 import { VFC, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { weightClasses } from '../../data/weightClasses'
+import { disabledClasses, weightClasses } from '../../data/weightClasses'
 
 
 const SelectWeightClassPage: VFC = () => {
@@ -18,7 +18,7 @@ const SelectWeightClassPage: VFC = () => {
       </div>
       <div className="h-3/5 w-full flex justify-center items-start border-1 p-15 rounded-lg">
         <ul className="menu h-full lg:w-2/5 md:w-1/2 sm:w-4/5 p-5 border bg-base-100 rounded-box shadow-lg overflow-y-scroll">
-          {weightClasses.map((item, index) => (
+          {weightClasses.filter((item) => !disabledClasses.includes(item)).map((item, index) => (
             <li key={index} onClick={() => handleSelectWeightClass(item)}>
               <a className={selectedClass === item ? 'bg-base-300' : ''}>
                 {item}

@@ -27,7 +27,7 @@ const HomePage: VFC = () => {
             />
             <CustomHomeButton
               text="LET'S BATTLE!"
-              onClick={() => history.push('/players')}
+              onClick={() => history.push('/battle')}
             />
           </div>
         </div>

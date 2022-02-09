@@ -1,17 +1,17 @@
 import { useEffect, forwardRef } from 'react'
-
+import { useHistory } from 'react-router-dom'
 import { setCardsToDeck } from '../battleField/modules/setCardsToDeck'
 import DeckOfBattleCard from './DeckOfBattleCard'
 
 const RightSwipeCard = forwardRef((props, ref) => {
   let allCards = ref.current?.children
-
+  const history = useHistory()
   if (allCards) {
     const isOver =
       Array.from(allCards).filter((item) => item.className !== 'tinder--card')
         .length === allCards.length
     if (isOver) {
-      alert('hello')
+      history.push(`/battle`)
     }
   }
 
