@@ -1,4 +1,5 @@
-.buttonStyle {
+// **** Home Page ****
+.homeBtn {
   width: 200px;
   padding: 15px 0;
   text-align: center;
@@ -36,8 +37,35 @@
 }
 
 @media screen and (max-width: 480px) {
-  .buttonStyle {
+  .homeBtn {
     font-size: 0.7rem;
     margin: 10px 10px;
   }
+}
+
+// **** battle Page ****
+
+.loseBtn,
+.winBtn {
+  line-height: 60px;
+  width: 60px;
+  border: 0;
+  display: inline-block;
+  margin: 0 1.5rem;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.loseBtn {
+  -webkit-box-shadow: 0 5px 0 rgba(220, 38, 38, 1);
+  box-shadow: 0 5px 0 rgba(220, 38, 38, 1);
+  @apply rounded-full  text-white bg-red-500;
+}
+
+.winBtn {
+  -webkit-box-shadow: 0 5px 0 rgba(5, 150, 105, 1);
+  box-shadow: 0 5px 0 rgba(5, 150, 105, 1);
+  @apply rounded-full text-white bg-green-500;
 }

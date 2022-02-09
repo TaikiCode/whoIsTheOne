@@ -1,4 +1,5 @@
 import {ReactNode, VFC} from 'react'
+import "./customButton.scss"
 
 interface Props {
     className: string
