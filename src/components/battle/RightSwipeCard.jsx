@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import { useEffect, forwardRef } from 'react'
+
 import { setCardsToDeck } from '../battleField/modules/setCardsToDeck'
-import BattleCard from './BattleCard'
+import DeckOfBattleCard from './DeckOfBattleCard'
 
-const RightSwipeCard = (props) => {
-  let ref = useRef(null)
-
+const RightSwipeCard = forwardRef((props, ref) => {
   let allCards = ref.current?.children
 
   if (allCards) {
@@ -35,21 +34,12 @@ const RightSwipeCard = (props) => {
 
   return (
     <>
-      <div className="w-full h-3/4 flexRowCenter">
-        <div className="tinder loaded">
-          <div ref={ref} className="tinder--cards">
-            {props.boxersList &&
-              props.boxersList.map((item, index) => (
-                <BattleCard key={index} boxer={item} />
-              ))}
-          </div>
-        </div>
-      </div>
+      <DeckOfBattleCard ref={ref} boxersList={props.boxersList} isLoad />
       <div className="w-full h-1/4 flex justify-center items-start">
         <h1 className="text-xl">対戦相手</h1>
       </div>
     </>
   )
-}
+})
 
 export default RightSwipeCard
