@@ -1,4 +1,5 @@
 import { removedCardClassName, swipeCardClassName } from "../CONSTANT"
+import { getSwipingCards } from "./getSpecificCards"
 
 // 対戦カードをデッキにセットする
 export const setCardsToDeck = (cards: any[], isReset: boolean) => {
@@ -6,7 +7,7 @@ export const setCardsToDeck = (cards: any[], isReset: boolean) => {
 
   const newCards = isReset
     ? cards
-    : cards.filter((card) => card.className === swipeCardClassName)
+    : getSwipingCards(cards)
 
   newCards.forEach((card, index) => {
     if (isReset) card.classList.remove(removedCardClassName)

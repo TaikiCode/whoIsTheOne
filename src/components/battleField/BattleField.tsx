@@ -5,7 +5,7 @@ import DeckOfBattleCard from './DeckOfBattleCard/DeckOfBattleCard'
 import { setCardsToDeck } from './modules/setCardsToDeck'
 import { swipeCardAnimation } from './modules/swipeCardAnimation'
 import './battleField.scss'
-import { swipeCardClassName } from './CONSTANT'
+import { getRemovedCards, getSwipingCards } from './modules/getSpecificCards'
 
 interface Props {
   boxersList: any[]
@@ -22,17 +22,16 @@ const BattleField: VFC<Props> = ({ boxersList }) => {
   let rightDeckRef = useRef<any>(null)
 
   if (rightDeckRef.current?.children) {
+    const opponentCards = rightDeckRef.current.children
     const isOver =
-      Array.from(rightDeckRef.current.children).filter(
-        (item: any) => item.className !== swipeCardClassName
-      ).length === rightDeckRef.current.children.length
+      getRemovedCards(Array.from(opponentCards)).length === opponentCards.length
     if (isOver) {
       history.push(`/battle`)
     }
   }
 
   const swipeAnimation = (cards: HTMLDivElement[], isWinner: boolean) => {
-    const newCards = cards.filter((item) => item.className === swipeCardClassName)
+    const newCards = getSwipingCards(cards)
     if (!newCards.length) return false
 
     swipeCardAnimation(newCards[0], isWinner)
