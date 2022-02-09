@@ -17,7 +17,6 @@ const RightSwipeCard = forwardRef((props, ref) => {
 
   useEffect(() => {
     setCardsToDeck(Array.from(ref.current.children), false)
-    // props.setPlayersData([props.boxersList[props.opponentIndex]])
   }, [])
 
   useEffect(() => {
@@ -25,10 +24,6 @@ const RightSwipeCard = forwardRef((props, ref) => {
       props.swipeAnimation(Array.from(allCards), true)
       props.setIsDone(false)
       props.setOpponentIndex((prev) => prev + 1)
-      // props.setPlayersData((prev) => [
-      //   ...prev,
-      //   props.boxersList[props.opponentIndex + 1],
-      // ])
     }
   }, [props.isDone])
 

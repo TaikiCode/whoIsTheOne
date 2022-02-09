@@ -17,9 +17,7 @@ const LeftSwipeCard = forwardRef((props, ref) => {
     <>
       <DeckOfBattleCard
         ref={ref}
-        boxersList={props.boxersList.filter(
-          (_, index) => index !== props.opponentIndex
-        )}
+        boxersList={props.boxersList}
         isLoad={isLoad}
       />
       <div className="w-full h-1/4 flex justify-center items-start">
