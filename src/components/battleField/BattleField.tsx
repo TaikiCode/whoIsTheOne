@@ -6,9 +6,8 @@ import { setCardsToDeck } from './modules/setCardsToDeck'
 import { swipeCardAnimation } from './modules/swipeCardAnimation'
 
 interface Props {
-    boxersList: any[]
+  boxersList: any[]
 }
-
 
 const BattleField: VFC<Props> = ({ boxersList }) => {
   const history = useHistory()

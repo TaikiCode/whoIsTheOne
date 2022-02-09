@@ -21,8 +21,20 @@ const HomePage: VFC = () => {
             champion."
           </p>
           <div>
-            <CustomButton className="homeBtn" onClick={() => history.push('/players')}><span />{"WATCH PLAYERS"}</CustomButton>
-            <CustomButton className="homeBtn" onClick={() => history.push('/battle')}><span />{"LET'S BATTLE!"}</CustomButton>
+            <CustomButton
+              className="homeBtn"
+              onClick={() => history.push('/players')}
+            >
+              <span />
+              {'WATCH PLAYERS'}
+            </CustomButton>
+            <CustomButton
+              className="homeBtn"
+              onClick={() => history.push('/battle')}
+            >
+              <span />
+              {"LET'S BATTLE!"}
+            </CustomButton>
           </div>
         </div>
       </div>
