@@ -1,4 +1,5 @@
 import React from 'react'
+import CustomButton from '../atom/customButton/CustomButton'
 
 const ActionButtons = ({ swipeAnimation, allCards }) => {
   const BUTTON_CONFIG = [
@@ -17,9 +18,13 @@ const ActionButtons = ({ swipeAnimation, allCards }) => {
   return (
     <div className="tinder--buttons">
       {BUTTON_CONFIG.map((item, index) => (
-        <button key={index} className={item.className} onClick={item.onClick}>
+        <CustomButton
+          key={index}
+          className={item.className}
+          onClick={item.onClick}
+        >
           {item.text}
-        </button>
+        </CustomButton>
       ))}
     </div>
   )

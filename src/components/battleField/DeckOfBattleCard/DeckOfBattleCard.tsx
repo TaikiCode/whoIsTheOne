@@ -1,7 +1,12 @@
 import { forwardRef } from 'react'
-import BattleCard from './BattleCard'
+import BattleCard from '../../battle/BattleCard'
 
-const DeckOfBattleCard = forwardRef(({ boxersList, isLoad }, ref) => {
+interface Props {
+    boxersList: any[]
+    isLoad: boolean
+}
+
+const DeckOfBattleCard = forwardRef<HTMLDivElement, Props>(({ boxersList, isLoad }, ref) => {
   return (
     <div className="w-full h-3/4 flexRowCenter">
       <div className={isLoad ? 'tinder loaded' : 'tinder'}>

@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 import { useParams } from 'react-router-dom';
-import BattleCardArea from '../../components/battle/BattleCardArea'
+import BattleField from '../../components/battleField/BattleField';
 import { allBoxers } from '../../data/allPlayers'
 
 const BattlePage: VFC = () => {
@@ -22,9 +22,7 @@ const BattlePage: VFC = () => {
         </h1>
         <div className="text-lg">- {weightClass} -</div>
       </div>
-      <BattleCardArea
-        boxersList={boxersList}
-      />
+      <BattleField boxersList={boxersList} />
     </div>
   )
 }
