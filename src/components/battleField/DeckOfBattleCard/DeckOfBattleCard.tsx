@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import BattleCard from '../../battle/BattleCard'
+import BattleCard from '../BattleCard/BattleCard'
 
 interface Props {
   boxersList: any[]

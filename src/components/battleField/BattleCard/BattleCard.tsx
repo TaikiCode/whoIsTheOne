@@ -1,7 +1,11 @@
-import React from 'react'
-import { swipeCardClassName } from '../battleField/CONSTANT'
+import {VFC} from 'react'
+import { swipeCardClassName } from '../CONSTANT'
 
-const BattleCard = ({ boxer }) => {
+interface Props {
+    boxer: any
+}
+
+const BattleCard: VFC<Props> = ({ boxer }) => {
   return (
     <div className={swipeCardClassName}>
       <img src={boxer.image} alt={boxer.name} />
