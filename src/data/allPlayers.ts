@@ -309,5 +309,14 @@ export const allBoxers = [
     image: "https://www.ringtv.com/wp-content/uploads/2016/08/Johnriel-Casimero-ratings-TV5-270x270.jpg",
     point: 0,
   },
+  {
+    name: 'George Kambosos JR',
+    record: '20-0-0 10 KOs',
+    weightClass: 'ライト級',
+    category: 'ライト・スーパーライト級',
+    image: "https://www.ringtv.com/wp-content/uploads/2020/11/George-Kambosos-looking-at-the-Ring-title-270x270.jpg",
+    point: 0,
+  },
+
 ]
 
