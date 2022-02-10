@@ -6,7 +6,6 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react'
-import { useHistory } from 'react-router-dom'
 import CustomButton from '../atom/customButton/CustomButton'
 import DeckOfBattleCard from './DeckOfBattleCard/DeckOfBattleCard'
 import { setCardsToDeck } from './modules/setCardsToDeck'
@@ -17,12 +16,11 @@ import { getRemovedCards, getSwipingCards } from './modules/getSpecificCards'
 interface Props {
   playersData: any[]
   setPlayersData: Dispatch<SetStateAction<any>>
+  setIsGameOver: Dispatch<SetStateAction<boolean>>
   weightClass: string
 }
 
-const BattleField: VFC<Props> = ({ playersData, setPlayersData, weightClass }) => {
-  const history = useHistory()
-  // const [playersData, setPlayersData] = useState<any[]>(boxersList)
+const BattleField: VFC<Props> = ({ playersData, setPlayersData, weightClass, setIsGameOver }) => {
   const [opponentIndex, setOpponentIndex] = useState<number>(0)
   const [isDone, setIsDone] = useState<boolean>(false)
   const [isLoad, setIsLoad] = useState<boolean>(false)
@@ -35,7 +33,7 @@ const BattleField: VFC<Props> = ({ playersData, setPlayersData, weightClass }) =
     const isOver =
       getRemovedCards(Array.from(opponentCards)).length === opponentCards.length
     if (isOver) {
-      history.push(`/battle`)
+      setIsGameOver(true)
     }
   }
 
