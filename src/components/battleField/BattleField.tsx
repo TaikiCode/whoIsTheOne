@@ -13,7 +13,7 @@ interface Props {
 
 const BattleField: VFC<Props> = ({ boxersList }) => {
   const history = useHistory()
-  // const [playersData, setPlayersData] = useState([])
+  const [playersData, setPlayersData] = useState<any[]>(boxersList)
   const [opponentIndex, setOpponentIndex] = useState(0)
   const [isDone, setIsDone] = useState(false)
   const [isLoad, setIsLoad] = useState(false)
@@ -50,9 +50,12 @@ const BattleField: VFC<Props> = ({ boxersList }) => {
     setIsLoad(true)
     setCardsToDeck(Array.from(leftDeckRef.current.children), false)
     setCardsToDeck(Array.from(rightDeckRef.current.children), false)
+
+    setPlayersData((prevData) => prevData.map((data) => true && {...data, score: 0 }))
   }, [])
 
   useEffect(() => {
+    console.log(playersData)
     if (isDone) {
       swipeAnimation(Array.from(rightDeckRef.current.children), true)
       setIsDone(false)
@@ -71,17 +74,20 @@ const BattleField: VFC<Props> = ({ boxersList }) => {
         <div className="w-full h-1/4 flex justify-center items-start">
           <CustomButton
             className="loseBtn"
-            onClick={() =>
+            onClick={() =>  {
               swipeAnimation(Array.from(leftDeckRef.current?.children), false)
-            }
+              setPlayersData((prevData) => prevData.map((data, index) => opponentIndex === index ? {...data, score: data.score + 1}: data))
+              
+            }}
           >
             {'Lose'}
           </CustomButton>
           <CustomButton
             className="winBtn"
-            onClick={() =>
+            onClick={() => {
               swipeAnimation(Array.from(leftDeckRef.current?.children), true)
-            }
+              setPlayersData((prevData) => prevData.map((data, index) => opponentIndex === index ? {...data, score: data.score - 1}: data))
+            }}
           >
             {'Win'}
           </CustomButton>
