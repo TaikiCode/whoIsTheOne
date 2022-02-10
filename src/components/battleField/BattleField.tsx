@@ -57,10 +57,6 @@ const BattleField: VFC<Props> = ({ playersData, setPlayersData, weightClass, set
     setIsLoad(true)
     setCardsToDeck(Array.from(leftDeckRef.current.children), false)
     setCardsToDeck(Array.from(rightDeckRef.current.children), false)
-
-    setPlayersData((prevData: any) =>
-      prevData.map((data: any) => true && { ...data, score: 0 })
-    )
   }, [])
 
   useEffect(() => {

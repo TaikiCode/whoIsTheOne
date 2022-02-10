@@ -12,7 +12,7 @@ const BattlePage: VFC = () => {
   const weightClass = slug
   const boxersList = allBoxers.filter(
     (item) => item.weightClass === weightClass
-  )
+  ).map((data) => true && {...data, score: 0})
 
   const [playersData, setPlayersData] = useState<any[]>(boxersList)
   const [isGameOver, setIsGameOver] = useState<boolean>(false)
@@ -26,7 +26,6 @@ const BattlePage: VFC = () => {
   return (
     <div className="h-screen">
       {renderComponent()}
-      {/* <BattleField playersData={playersData} setPlayersData={setPlayersData} setIsGameOver={setIsGameOver} weightClass={weightClass} /> */}
     </div>
   )
 }
