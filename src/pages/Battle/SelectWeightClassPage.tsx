@@ -32,9 +32,9 @@ const SelectWeightClassPage: VFC = () => {
       <div className="h-1/5 w-1/3 flex justify-around items-center">
         <CustomButton
           className="btn btn-outline btn-warning"
-          onClick={() => history.push('/')}
+          onClick={() => history.push('/players')}
         >
-          Homeに戻る
+          選手一覧ページへ
         </CustomButton>
         <CustomButton
           onClick={() => history.push(`/battle/${selectedClass}`)}

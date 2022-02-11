@@ -21,7 +21,7 @@ const PlayersPage: VFC = () => {
       <Navbar />
       <div className="lg:mx-24 bg-base-200">
         <div className="text-center pt-40 pb-12">
-          <h1 className="text-5xl uppercase">All Players</h1>
+          <h1 className="text-3xl uppercase">ALL Players</h1>
         </div>
         <Tabs
           currentWeight={currentWeight}

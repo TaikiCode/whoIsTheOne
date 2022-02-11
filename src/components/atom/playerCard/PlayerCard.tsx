@@ -15,7 +15,7 @@ const PlayerCard: VFC<Props> = ({ name, image, weightClass, record }) => {
         <img className="w-full" src={image} alt={name} />
         <div className="py-3 text-center">
           <div className="font-serif font-extrabold text-lg">{name}</div>
-          <span className="text-gray-700 weightClass">{weightClass}</span>
+          <span className="text-gray-700 text-sm font-mono">{weightClass}</span>
           <p className="text-gray-700 text-xs">
             {record}
             {/* {boxer.win}-{boxer.lose}-{boxer.draw} {boxer.KO}KOs */}
