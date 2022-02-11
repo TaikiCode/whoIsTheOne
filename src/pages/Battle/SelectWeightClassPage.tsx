@@ -1,6 +1,7 @@
 import { VFC, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import CustomButton from '../../components/atoms/customButton/CustomButton'
+import CustomButton from '../../components/common/customButton/CustomButton'
+import Header from '../../components/common/header/Header'
 import { disabledClasses, weightClasses } from '../../data/weightClasses'
 
 const SelectWeightClassPage: VFC = () => {
@@ -12,10 +13,12 @@ const SelectWeightClassPage: VFC = () => {
 
   return (
     <div className="h-screen w-screen flexColCenter">
-      <div className="h-1/5 w-full flex flex-col justify-end items-center mb-8">
-        <h1 className="text-2xl italic">以下から階級を選択してください</h1>
+      <Header
+        displayText="以下から階級を選択してください"
+        headerStyle="selectWeightClassPageStyle"
+      >
         <p className="pt-3">- {selectedClass} -</p>
-      </div>
+      </Header>
       <div className="h-3/5 w-full flex justify-center items-start border-1 p-15 rounded-lg">
         <ul className="menu h-full lg:w-2/5 md:w-1/2 sm:w-4/5 p-5 border bg-base-100 rounded-box shadow-lg overflow-y-scroll">
           {weightClasses

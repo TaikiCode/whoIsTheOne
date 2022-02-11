@@ -1,0 +1,41 @@
+// 選手一覧ページ
+.playersPageStyle {
+  height: 10%;
+  @apply flex justify-center items-end;
+  h1 {
+    @apply text-3xl uppercase;
+  }
+}
+
+// 評価一覧ページ
+.ratingsPageStyle {
+  height: 10%;
+  @apply flex justify-center items-end;
+  h1 {
+    @apply text-3xl uppercase;
+  }
+}
+
+// 階級選択ページ
+.selectWeightClassPageStyle {
+  @apply h-1/5 w-full flex flex-col justify-end items-center mb-8;
+  h1 {
+    @apply text-2xl italic;
+  }
+}
+
+// 対戦ページ
+.battleFieldStyle {
+  @apply h-1/4 flex flex-col justify-evenly items-center pt-10;
+  h1 {
+    @apply text-4xl italic;
+  }
+}
+
+// 対戦結果ページ
+.battleResultStyle {
+  @apply h-1/5 flex flex-col justify-evenly items-center pt-10;
+  h1 {
+    @apply text-3xl italic;
+  }
+}

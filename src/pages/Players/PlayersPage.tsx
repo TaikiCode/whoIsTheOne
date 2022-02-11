@@ -1,10 +1,10 @@
 import { VFC, useState } from 'react'
-import Navbar from '../../components/navbar/Navbar'
+import Header from '../../components/common/header/Header'
+import Layout from '../../components/layout/Layout'
 import PlayerCardList from '../../components/playerCardList/PlayerCardList'
 import Tabs from '../../components/tabs/Tabs'
 import { allBoxers } from '../../data/allPlayers'
 import { weightClassesForTabs } from '../../data/weightClasses'
-import './playersPage.scss'
 
 const PlayersPage: VFC = () => {
   const [currentWeight, setCurrentWeight] = useState<string>('全て')
@@ -17,13 +17,10 @@ const PlayersPage: VFC = () => {
     })
   }
   return (
-    <>
-      <Navbar />
-      <div className="lg:mx-24 bg-base-200">
-        <div className="text-center pt-32 pb-8">
-          <h1 className="text-3xl uppercase">ALL Players</h1>
-        </div>
-        <div className="mx-12">
+    <Layout>
+      <Header displayText="all players" headerStyle="playersPageStyle" />
+      <div style={{ height: '90%' }} className="flex flex-col">
+        <div className="mx-12 mt-10">
           <Tabs
             currentWeight={currentWeight}
             weightClasses={weightClassesForTabs}
@@ -33,7 +30,7 @@ const PlayersPage: VFC = () => {
         </div>
         <PlayerCardList players={filteredPlayers(allBoxers) || []} />
       </div>
-    </>
+    </Layout>
   )
 }
 
