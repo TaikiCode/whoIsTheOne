@@ -8,7 +8,7 @@ interface Props {
 
 const Tabs: VFC<Props> = ({ currentWeight, weightClasses, onClick }) => {
   return (
-    <div className="tabs tabs-boxed flex flex-nowrap py-5 overflow-x-scroll whitespace-nowrap">
+    <div className="tabs tabs-boxed flex flex-nowrap py-4 overflow-x-scroll whitespace-nowrap">
       {weightClasses.map((weightClass, index) => (
         <a
           key={index}

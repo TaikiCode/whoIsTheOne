@@ -6,7 +6,7 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react'
-import CustomButton from '../atom/customButton/CustomButton'
+import CustomButton from '../atoms/customButton/CustomButton'
 import DeckOfBattleCard from './DeckOfBattleCard/DeckOfBattleCard'
 import { setCardsToDeck } from './modules/setCardsToDeck'
 import { swipeCardAnimation } from './modules/swipeCardAnimation'
@@ -20,7 +20,12 @@ interface Props {
   weightClass: string
 }
 
-const BattleField: VFC<Props> = ({ playersData, setPlayersData, weightClass, setIsGameOver }) => {
+const BattleField: VFC<Props> = ({
+  playersData,
+  setPlayersData,
+  weightClass,
+  setIsGameOver,
+}) => {
   const [opponentIndex, setOpponentIndex] = useState<number>(0)
   const [isDone, setIsDone] = useState<boolean>(false)
   const [isLoad, setIsLoad] = useState<boolean>(false)

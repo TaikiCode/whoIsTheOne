@@ -1,6 +1,6 @@
 import { VFC, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import CustomButton from '../../components/atom/customButton/CustomButton'
+import CustomButton from '../../components/atoms/customButton/CustomButton'
 import { disabledClasses, weightClasses } from '../../data/weightClasses'
 
 const SelectWeightClassPage: VFC = () => {

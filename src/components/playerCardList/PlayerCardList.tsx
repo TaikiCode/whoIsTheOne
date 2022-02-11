@@ -1,5 +1,5 @@
 import { VFC } from 'react'
-import PlayerCard from '../atom/playerCard/PlayerCard'
+import PlayerCard from '../atoms/playerCard/PlayerCard'
 
 interface Props {
   players: any[]
@@ -7,7 +7,7 @@ interface Props {
 
 const PlayerCardList: VFC<Props> = ({ players }) => {
   return (
-    <div className="flex flex-row flex-wrap justify-center items-center py-5">
+    <div className="flex flex-row flex-wrap justify-center items-center py-10">
       {players.map((boxer, index) => (
         <PlayerCard key={index} {...boxer} />
       ))}

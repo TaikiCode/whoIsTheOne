@@ -188,6 +188,7 @@ export const allBoxers = [
     category: 'ライト・スーパーライト級',
     image:
       'https://www.ringtv.com/wp-content/uploads/2019/06/ryan-garcia-ratings-270x270.jpg',
+    point: 0,
   },
   {
     name: 'Guillermo Rigondeaux',
@@ -266,7 +267,8 @@ export const allBoxers = [
     record: '20-0-0 8 KOs',
     weightClass: 'スーパーバンタム級',
     category: 'バンタム・スーパーバンタム級',
-    image: "https://www.ringtv.com/wp-content/uploads/2020/02/stephen-fulton-ratings-e1631108637121-270x270.jpg",
+    image:
+      'https://www.ringtv.com/wp-content/uploads/2020/02/stephen-fulton-ratings-e1631108637121-270x270.jpg',
     point: 0,
   },
   {
@@ -274,7 +276,8 @@ export const allBoxers = [
     record: '10-0-0 7 KOs',
     weightClass: 'スーパーバンタム級',
     category: 'バンタム・スーパーバンタム級',
-    image: "https://www.ringtv.com/wp-content/uploads/2020/02/murodjon-akhmadaliev-ratings-270x270.jpg",
+    image:
+      'https://www.ringtv.com/wp-content/uploads/2020/02/murodjon-akhmadaliev-ratings-270x270.jpg',
     point: 0,
   },
   {
@@ -282,7 +285,8 @@ export const allBoxers = [
     record: '29-3-1 10 KOs',
     weightClass: 'スーパーバンタム級',
     category: 'バンタム・スーパーバンタム級',
-    image: "https://www.ringtv.com/wp-content/uploads/2017/09/Daniel-Roman-ratings-270x270.jpg",
+    image:
+      'https://www.ringtv.com/wp-content/uploads/2017/09/Daniel-Roman-ratings-270x270.jpg',
     point: 0,
   },
   {
@@ -290,7 +294,8 @@ export const allBoxers = [
     record: '22-1-1 17 KOs',
     weightClass: 'スーパーバンタム級',
     category: 'バンタム・スーパーバンタム級',
-    image: "https://www.ringtv.com/wp-content/uploads/2019/04/brandon-figueroa-ratings-270x270.jpg",
+    image:
+      'https://www.ringtv.com/wp-content/uploads/2019/04/brandon-figueroa-ratings-270x270.jpg',
     point: 0,
   },
   {
@@ -298,7 +303,8 @@ export const allBoxers = [
     record: '32-1-0 24 KOs',
     weightClass: 'スーパーバンタム級',
     category: 'バンタム・スーパーバンタム級',
-    image: "https://www.ringtv.com/wp-content/uploads/2016/09/luis-nery-ratings-270x270.jpg",
+    image:
+      'https://www.ringtv.com/wp-content/uploads/2016/09/luis-nery-ratings-270x270.jpg',
     point: 0,
   },
   {
@@ -306,7 +312,8 @@ export const allBoxers = [
     record: '31-4-0 21 KOs',
     weightClass: 'バンタム級',
     category: 'バンタム・スーパーバンタム級',
-    image: "https://www.ringtv.com/wp-content/uploads/2016/08/Johnriel-Casimero-ratings-TV5-270x270.jpg",
+    image:
+      'https://www.ringtv.com/wp-content/uploads/2016/08/Johnriel-Casimero-ratings-TV5-270x270.jpg',
     point: 0,
   },
   {
@@ -314,9 +321,8 @@ export const allBoxers = [
     record: '20-0-0 10 KOs',
     weightClass: 'ライト級',
     category: 'ライト・スーパーライト級',
-    image: "https://www.ringtv.com/wp-content/uploads/2020/11/George-Kambosos-looking-at-the-Ring-title-270x270.jpg",
+    image:
+      'https://www.ringtv.com/wp-content/uploads/2020/11/George-Kambosos-looking-at-the-Ring-title-270x270.jpg',
     point: 0,
   },
-
 ]
-
