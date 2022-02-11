@@ -1,6 +1,6 @@
 import { VFC, useState } from 'react'
 import Header from '../../components/common/header/Header'
-import Navbar from '../../components/common/navbar/Navbar'
+import Layout from '../../components/layout/Layout'
 import PlayerCardList from '../../components/playerCardList/PlayerCardList'
 import Tabs from '../../components/tabs/Tabs'
 import { allBoxers } from '../../data/allPlayers'
@@ -17,11 +17,10 @@ const PlayersPage: VFC = () => {
     })
   }
   return (
-    <>
-      <Navbar />
-      <div className="lg:mx-24 bg-base-200">
-        <Header displayText="all players" headerStyle="playersPageStyle" />
-        <div className="mx-12">
+    <Layout>
+      <Header displayText="all players" headerStyle="playersPageStyle" />
+      <div style={{ height: '90%' }} className="flex flex-col">
+        <div className="mx-12 mt-10">
           <Tabs
             currentWeight={currentWeight}
             weightClasses={weightClassesForTabs}
@@ -31,7 +30,7 @@ const PlayersPage: VFC = () => {
         </div>
         <PlayerCardList players={filteredPlayers(allBoxers) || []} />
       </div>
-    </>
+    </Layout>
   )
 }
 

@@ -1,6 +1,7 @@
 // 選手一覧ページ
 .playersPageStyle {
-  @apply text-center pt-32 pb-8;
+  height: 10%;
+  @apply flex justify-center items-end;
   h1 {
     @apply text-3xl uppercase;
   }

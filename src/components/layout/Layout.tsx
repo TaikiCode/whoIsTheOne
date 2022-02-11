@@ -1,5 +1,5 @@
 import { ReactNode, VFC } from 'react'
-import Navbar from '../common/navbar/Navbar'
+import Navbar from './navbar/Navbar'
 
 interface Props {
   children: ReactNode
