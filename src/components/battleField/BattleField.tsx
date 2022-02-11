@@ -6,12 +6,13 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react'
-import CustomButton from '../atoms/customButton/CustomButton'
+import CustomButton from '../common/customButton/CustomButton'
 import DeckOfBattleCard from './DeckOfBattleCard/DeckOfBattleCard'
 import { setCardsToDeck } from './modules/setCardsToDeck'
 import { swipeCardAnimation } from './modules/swipeCardAnimation'
 import './battleField.scss'
 import { getRemovedCards, getSwipingCards } from './modules/getSpecificCards'
+import Header from '../common/header/Header'
 
 interface Props {
   playersData: any[]
@@ -74,11 +75,12 @@ const BattleField: VFC<Props> = ({
 
   return (
     <>
-      <div className="h-1/4 flex flex-col justify-evenly items-center pt-10">
-        <h1 className="text-5xl uppercase italic">Which is the stronger?</h1>
-        <div className="text-lg">- {weightClass} -</div>
-      </div>
-
+      <Header
+        displayText="右の対戦相手に勝てる？"
+        headerStyle="battleFieldStyle"
+      >
+        <p className="text-lg">- {weightClass} -</p>
+      </Header>
       <div className="w-full h-3/4 lg:px-16 overflow-hidden flexRowCenter">
         <div className="w-2/5 h-full flexColCenter lg:pl-12">
           <DeckOfBattleCard

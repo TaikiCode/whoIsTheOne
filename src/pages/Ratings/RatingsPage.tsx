@@ -1,6 +1,7 @@
 import { VFC, useState } from 'react'
-import CustomTable from '../../components/molecules/customTable/CustomTable'
-import Navbar from '../../components/navbar/Navbar'
+import CustomTable from '../../components/common/customTable/CustomTable'
+import Header from '../../components/common/header/Header'
+import Navbar from '../../components/common/navbar/Navbar'
 import { allBoxers } from '../../data/allPlayers'
 import { disabledClasses, weightClasses } from '../../data/weightClasses'
 
@@ -24,12 +25,7 @@ const RatingsPage: VFC = () => {
       <Navbar />
       <div className="h-screen w-screen flex flex-col">
         <div style={{ height: '10%' }} />
-        <div
-          style={{ height: '10%' }}
-          className="flex justify-center items-end"
-        >
-          <h1 className="text-3xl uppercase">Ratings</h1>
-        </div>
+        <Header displayText="ratings" headerStyle="ratingsPageStyle" />
         <div style={{ height: '80%' }} className="flex flex-row">
           <div className="w-1/5 h-full flex justify-end items-center">
             <div className="h-5/6 w-5/6">

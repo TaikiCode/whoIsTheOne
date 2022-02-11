@@ -1,7 +1,8 @@
 import { VFC } from 'react'
 import { useHistory } from 'react-router-dom'
-import CustomButton from '../atoms/customButton/CustomButton'
-import CustomTable from '../molecules/customTable/CustomTable'
+import CustomButton from '../common/customButton/CustomButton'
+import CustomTable from '../common/customTable/CustomTable'
+import Header from '../common/header/Header'
 
 interface Props {
   playersData: any[]
@@ -20,10 +21,9 @@ const BattleResult: VFC<Props> = ({ playersData, weightClass }) => {
   const playerScores: number[] = sortedPlayersData.map((data) => data.score)
   return (
     <>
-      <div className="h-1/5 flex flex-col justify-evenly items-center pt-10">
-        <h1 className="text-3xl uppercase italic">対戦結果</h1>
-        <div className="text-md">- {weightClass} -</div>
-      </div>
+      <Header displayText="今回の対戦結果" headerStyle="battleResultStyle">
+        <p className="text-md">- {weightClass} -</p>
+      </Header>
       <div className="h-3/5 flex justify-center items-start overflow-y-scroll">
         <CustomTable
           head_list={['順位', '選手名', '戦績', 'スコア']}

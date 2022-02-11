@@ -1,5 +1,6 @@
 import { VFC, useState } from 'react'
-import Navbar from '../../components/navbar/Navbar'
+import Header from '../../components/common/header/Header'
+import Navbar from '../../components/common/navbar/Navbar'
 import PlayerCardList from '../../components/playerCardList/PlayerCardList'
 import Tabs from '../../components/tabs/Tabs'
 import { allBoxers } from '../../data/allPlayers'
@@ -20,9 +21,7 @@ const PlayersPage: VFC = () => {
     <>
       <Navbar />
       <div className="lg:mx-24 bg-base-200">
-        <div className="text-center pt-32 pb-8">
-          <h1 className="text-3xl uppercase">ALL Players</h1>
-        </div>
+        <Header displayText="all players" headerStyle="playersPageStyle" />
         <div className="mx-12">
           <Tabs
             currentWeight={currentWeight}

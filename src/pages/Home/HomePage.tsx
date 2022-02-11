@@ -2,7 +2,7 @@ import { VFC } from 'react'
 import { useHistory } from 'react-router-dom'
 import styles from './homePage.module.scss'
 import homeImage from '../../assets/home.png'
-import CustomButton from '../../components/atoms/customButton/CustomButton'
+import CustomButton from '../../components/common/customButton/CustomButton'
 
 const HomePage: VFC = () => {
   const history = useHistory()
