@@ -188,6 +188,7 @@ export const allBoxers = [
     category: 'ライト・スーパーライト級',
     image:
       'https://www.ringtv.com/wp-content/uploads/2019/06/ryan-garcia-ratings-270x270.jpg',
+    point: 0,
   },
   {
     name: 'Guillermo Rigondeaux',
