@@ -10,12 +10,13 @@ const PlayersPage: VFC = () => {
   const [currentWeight, setCurrentWeight] = useState<string>('全て')
   const onClick = (weightClass: string) => setCurrentWeight(weightClass)
 
-  const filteredPlayers = (allPlayers: any[]) => {
-    if (currentWeight === '全て') return allPlayers
-    return allPlayers.filter((player: any) => {
-      return player.category && player.category.includes(currentWeight)
-    })
-  }
+  const filteredPlayers =
+    currentWeight === '全て'
+      ? allBoxers
+      : allBoxers.filter(
+          (boxer) => boxer.category && boxer.category.includes(currentWeight)
+        )
+
   return (
     <Layout>
       <Header displayText="all players" headerStyle="playersPageStyle" />
@@ -28,7 +29,7 @@ const PlayersPage: VFC = () => {
           />
           <hr />
         </div>
-        <PlayerCardList players={filteredPlayers(allBoxers) || []} />
+        <PlayerCardList players={filteredPlayers || []} />
       </div>
     </Layout>
   )

@@ -9,16 +9,12 @@ const RatingsPage: VFC = () => {
   const [currentWeight, setCurrentWeight] = useState<string>('ヘビー級')
   const onClick = (weightClass: string) => setCurrentWeight(weightClass)
 
-  const filteredPlayers = (allPlayers: any[]) => {
-    return allPlayers.filter(
-      (player: any) => player.weightClass === currentWeight
-    )
-  }
+  const filteredPlayers = allBoxers.filter(
+    (boxer) => boxer.weightClass === currentWeight
+  )
 
   // 選手のポイントだけ取得
-  const playerPoint: number[] = filteredPlayers(allBoxers).map(
-    (data) => data.point
-  )
+  const playerPoint: number[] = filteredPlayers.map((data) => data.point)
 
   return (
     <Layout>
@@ -30,10 +26,7 @@ const RatingsPage: VFC = () => {
               {weightClasses
                 .filter((item) => !disabledClasses.includes(item))
                 .map((item) => (
-                  <li
-                    onClick={() => onClick(item)}
-                    className="border-b-2"
-                  >
+                  <li onClick={() => onClick(item)} className="border-b-2">
                     <a className={currentWeight === item ? 'bg-base-300' : ''}>
                       {item}
                     </a>
@@ -46,7 +39,7 @@ const RatingsPage: VFC = () => {
           <div className="w-5/6 h-5/6 overflow-y-scroll">
             <CustomTable
               head_list={['順位', '選手名', '戦績', 'ポイント']}
-              body_list={filteredPlayers(allBoxers)}
+              body_list={filteredPlayers}
               tableStyle="table table-zebra w-full shadow-xl rounded-2xl"
               isTotal
               point_list={playerPoint}
