@@ -1,5 +1,5 @@
 import { VFC } from 'react'
-import PlayerCard from '../atom/playerCard/PlayerCard'
+import PlayerCard from '../atoms/playerCard/PlayerCard'
 
 interface Props {
   players: any[]

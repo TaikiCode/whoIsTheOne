@@ -6,7 +6,7 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react'
-import CustomButton from '../atom/customButton/CustomButton'
+import CustomButton from '../atoms/customButton/CustomButton'
 import DeckOfBattleCard from './DeckOfBattleCard/DeckOfBattleCard'
 import { setCardsToDeck } from './modules/setCardsToDeck'
 import { swipeCardAnimation } from './modules/swipeCardAnimation'
