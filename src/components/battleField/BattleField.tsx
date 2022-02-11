@@ -20,7 +20,12 @@ interface Props {
   weightClass: string
 }
 
-const BattleField: VFC<Props> = ({ playersData, setPlayersData, weightClass, setIsGameOver }) => {
+const BattleField: VFC<Props> = ({
+  playersData,
+  setPlayersData,
+  weightClass,
+  setIsGameOver,
+}) => {
   const [opponentIndex, setOpponentIndex] = useState<number>(0)
   const [isDone, setIsDone] = useState<boolean>(false)
   const [isLoad, setIsLoad] = useState<boolean>(false)

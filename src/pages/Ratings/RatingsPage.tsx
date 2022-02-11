@@ -14,8 +14,10 @@ const RatingsPage: VFC = () => {
     )
   }
 
-    // 選手のポイントだけ取得
-    const playerPoint: number[] = filteredPlayers(allBoxers).map((data) => data.point)
+  // 選手のポイントだけ取得
+  const playerPoint: number[] = filteredPlayers(allBoxers).map(
+    (data) => data.point
+  )
 
   return (
     <>

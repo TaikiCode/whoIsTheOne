@@ -1,8 +1,8 @@
-import {VFC} from 'react'
+import { VFC } from 'react'
 import { swipeCardClassName } from '../CONSTANT'
 
 interface Props {
-    boxer: any
+  boxer: any
 }
 
 const BattleCard: VFC<Props> = ({ boxer }) => {
