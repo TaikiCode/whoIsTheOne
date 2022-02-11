@@ -5,7 +5,6 @@ import PlayerCardList from '../../components/playerCardList/PlayerCardList'
 import Tabs from '../../components/tabs/Tabs'
 import { allBoxers } from '../../data/allPlayers'
 import { weightClassesForTabs } from '../../data/weightClasses'
-import './playersPage.scss'
 
 const PlayersPage: VFC = () => {
   const [currentWeight, setCurrentWeight] = useState<string>('全て')
