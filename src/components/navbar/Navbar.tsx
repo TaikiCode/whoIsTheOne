@@ -17,6 +17,10 @@ const NAV_ITEM_LIST = [
     text: 'Battle',
     path: '/battle',
   },
+  {
+    text: 'Ratings',
+    path: '/ratings',
+  },
 ]
 
 const Navbar: VFC = () => {

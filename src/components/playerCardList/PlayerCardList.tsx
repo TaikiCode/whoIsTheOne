@@ -7,7 +7,7 @@ interface Props {
 
 const PlayerCardList: VFC<Props> = ({ players }) => {
   return (
-    <div className="flex flex-row flex-wrap justify-center items-center py-5">
+    <div className="flex flex-row flex-wrap justify-center items-center py-10">
       {players.map((boxer, index) => (
         <PlayerCard key={index} {...boxer} />
       ))}

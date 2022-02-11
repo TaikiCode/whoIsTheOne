@@ -20,15 +20,17 @@ const PlayersPage: VFC = () => {
     <>
       <Navbar />
       <div className="lg:mx-24 bg-base-200">
-        <div className="text-center pt-40 pb-12">
+        <div className="text-center pt-32 pb-8">
           <h1 className="text-3xl uppercase">ALL Players</h1>
         </div>
-        <Tabs
-          currentWeight={currentWeight}
-          weightClasses={weightClassesForTabs}
-          onClick={onClick}
-        />
-        <hr />
+        <div className="mx-12">
+          <Tabs
+            currentWeight={currentWeight}
+            weightClasses={weightClassesForTabs}
+            onClick={onClick}
+          />
+          <hr />
+        </div>
         <PlayerCardList players={filteredPlayers(allBoxers) || []} />
       </div>
     </>
