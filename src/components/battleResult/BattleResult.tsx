@@ -1,6 +1,7 @@
 import { VFC } from 'react'
 import { useHistory } from 'react-router-dom'
 import CustomButton from '../atom/customButton/CustomButton'
+import { ranking } from './modules/ranking'
 
 interface Props {
   playersData: any[]
@@ -9,10 +10,18 @@ interface Props {
 
 const BattleResult: VFC<Props> = ({ playersData, weightClass }) => {
   const history = useHistory()
+
+  // 得点が高い順に並び替える
+  const sortedPlayersData = playersData
+    .slice()
+    .sort((x, y) => (x.score > y.score ? -1 : x.score < y.score ? 1 : 0))
+
+  // 選手のスコアだけ取得
+  const playerScores: number[] = sortedPlayersData.map((data) => data.score)
   return (
     <>
       <div className="h-1/5 flex flex-col justify-evenly items-center pt-10">
-        <h1 className="text-3xl uppercase italic">結果発表</h1>
+        <h1 className="text-3xl uppercase italic">対戦結果</h1>
         <div className="text-md">- {weightClass} -</div>
       </div>
       <div className="h-3/5 flex justify-center items-start overflow-y-scroll">
@@ -26,9 +35,11 @@ const BattleResult: VFC<Props> = ({ playersData, weightClass }) => {
             </tr>
           </thead>
           <tbody>
-            {playersData.map((boxer, index) => (
+            {sortedPlayersData.map((boxer, index) => (
               <tr key={index}>
-                <td className="text-center text-lg font-serif">{index + 1} 位</td>
+                <td className="text-center text-lg font-serif">
+                  {ranking(playerScores)[index]} 位
+                </td>
                 <td className="text-center h-full flex items-center">
                   <div className="w-1/3 avatar flex justify-end">
                     <div className="w-16 h-16 rounded-btn">
