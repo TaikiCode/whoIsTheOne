@@ -14,12 +14,12 @@ const NAV_ITEM_LIST = [
     path: '/players',
   },
   {
-    text: 'Battle',
-    path: '/battle',
-  },
-  {
     text: 'Ratings',
     path: '/ratings',
+  },
+  {
+    text: 'Battle',
+    path: '/battle',
   },
 ]
 
