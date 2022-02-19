@@ -15,6 +15,13 @@ a {
   text-decoration: none;
 }
 
+// *** PlayersPage Style ***
+
+.playersPageContainer {
+  height: 90%;
+  @apply flex flex-col;
+}
+
 // *** tailwind Custom ***
 .flexRowCenter {
   @apply flex justify-center items-center;

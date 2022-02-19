@@ -24,10 +24,9 @@ const NAV_ITEM_LIST = [
 ]
 
 const Navbar: VFC = () => {
-  const [profileMenu, setProfileMenu] = useState(false)
   const [navToggle, setNavToggle] = useState(false)
   return (
-    <nav className="bg-gray-900 fixed w-screen z-50">
+    <nav className="navbarStyle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-2">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -47,7 +46,7 @@ const Navbar: VFC = () => {
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
               <div className="hidden lg:block h-auto w-auto text-2xl font-serif text-white">
-                Sweet Science.
+                WhoIsTheOne?
               </div>
             </div>
             <div className="hidden sm:block sm:ml-64">
@@ -59,29 +58,9 @@ const Navbar: VFC = () => {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button className="p-1  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            {/* <button className="p-1  text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
               <LogoutIcon className="h-6 w-6" />
-            </button>
-            {/* <!-- Profile dropdown --> */}
-            <div className="ml-3 relative">
-              <div>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                  onClick={() => setProfileMenu(!profileMenu)}
-                  id="user-menu"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                >
-                  {/* <span className="sr-only">Open user menu</span> */}
-                  <img
-                    className="h-8 w-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
-                </button>
-              </div>
-            </div>
+            </button> */}
           </div>
         </div>
       </div>
