@@ -21,7 +21,7 @@ const PlayersPage: VFC = () => {
     <Layout>
       <Header displayText="all players" headerStyle="playersPageStyle" />
       <div style={{ height: '90%' }} className="flex flex-col">
-        <div className="mx-12 mt-10">
+        <div className="px-20 mt-10">
           <Tabs
             currentWeight={currentWeight}
             weightClasses={weightClassesForTabs}

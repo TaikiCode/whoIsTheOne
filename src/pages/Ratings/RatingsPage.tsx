@@ -47,6 +47,9 @@ const RatingsPage: VFC = () => {
           </div>
         </div>
       </div>
+      <div className="absolute w-screen bottom-0 z-50 bg-black bg-opacity-80 flex flex-col justify-center items-center" style={{ height: '90%' }}>
+        <h1 className="text-white text-4xl font-serif italic tracking-widest">Coming Soon....</h1>
+      </div>
     </Layout>
   )
 }

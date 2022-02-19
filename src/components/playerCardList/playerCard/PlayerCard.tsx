@@ -10,7 +10,7 @@ interface Props {
 
 const PlayerCard: VFC<Props> = ({ name, image, weightClass, record }) => {
   return (
-    <div className="px-2 pb-3 transform transition duration-500 hover:rotate-6 cursor-pointer">
+    <div className="px-4 pb-3 transform transition duration-500 hover:rotate-6 cursor-pointer">
       <div className="bg-white rounded-lg overflow-hidden shadow-2xl mx-2 mb-5">
         <img className="w-full" src={image} alt={name} />
         <div className="py-2 text-center">
